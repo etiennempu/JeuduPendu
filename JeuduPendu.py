@@ -14,6 +14,7 @@ def jouer():
     #on récupère le mot a deviné
     mot = selectionner_mot()
     lettres_devinees = set()
+    lettres_mauvaises = set()
     chances = 6
     # le jeu continue tant qu'il nous reste des vie
     while chances > 0:
@@ -30,8 +31,19 @@ def jouer():
         print(etat_actuel)
         print("Chances restantes : ", chances)
 
-        #on demande au joueur de deviner une lettre
-        lettre = input("Entrez une lettre : ")
+        lettre = " "
+        # dans cette boucle on demande à l'utilisateur de donné une lettre et on vérifie qu'elle est bien minuscule et sans accent
+        while 96 > ord(lettre) or ord(lettre) > 123:
+            lettre = input("Veuillez entrer une lettre minuscule sans accent : ")
+            if len(lettre) > 1 or len(lettre) == 0:
+                lettre = " "
+            elif lettre in lettres_devinees:
+                print("tu as déjà trouvé cette lettre")
+                lettre = " "
+            elif lettre in lettres_mauvaises:
+                print("tu t'es déjà trompé avec cette lettre...")
+                lettre = " "
+
         #si la lettre est contenue dans le mot on l'ajoute à la liste des mettres deviné
         if lettre in mot:
             lettres_devinees.add(lettre)
@@ -39,6 +51,7 @@ def jouer():
         #sinon on enlève 1 chance
         else:
             chances -= 1
+            lettres_mauvaises.add(lettre)
             print("La lettre n'est pas dans le mot.")
 
         #condition de vitctoire toutes les lettres du mot on été trouvé on informe le joueur et on quitte

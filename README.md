@@ -13,8 +13,7 @@ puis il recomence tant que l'utilisateur à encore des vie ou qu'il n'a pas devi
 
 Pour joué il suffit de lancer le fichier JeuduPendu.py et de suivre les instructions
 
--ATTENTION LE PROGRAMME NE GERE QUE LES LETTRES MINUSCULES ET SANS ACCENT\
--ATTENTION A BIEN RETENIR VOS ERREUR LE PROGRAMME NE VOUS AIDERA PAS...
+-ATTENTION LE PROGRAMME NE GERE QUE LES LETTRES MINUSCULES ET SANS ACCENT
 
 -SURTOUT PENSEZ A BIEN VOUS AMUSER!!!
 
